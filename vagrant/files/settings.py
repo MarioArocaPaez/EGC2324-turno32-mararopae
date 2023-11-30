@@ -14,6 +14,9 @@ DATABASES = {
 STATIC_ROOT = '/home/decide/static/'
 MEDIA_ROOT = '/home/decide/static/media/'
 ALLOWED_HOSTS = ['*']
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'Strict'
+CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
 
 # Modules in use, commented modules that you won't use
 MODULES = [

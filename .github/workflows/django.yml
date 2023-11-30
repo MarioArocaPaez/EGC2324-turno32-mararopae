@@ -42,3 +42,12 @@ jobs:
       run: |
         cd decide
         ./manage.py test  --keepdb
+        
+    - name: Change permissions on decide (Make static directory tree readable)
+      become: yes
+      file:
+    	path: /home/decide
+    	owner: "decide"
+	recurse: yes
+	group: decide
+	mode: "555"
